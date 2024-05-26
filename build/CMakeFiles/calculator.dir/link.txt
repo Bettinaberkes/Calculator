@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/calculator.dir/src/main.c.o CMakeFiles/calculator.dir/src/calculator.c.o -o calculator  -lpthread 
