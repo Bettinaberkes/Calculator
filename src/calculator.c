@@ -52,7 +52,6 @@ void start_calculator() {
         perror("fork");
         exit(EXIT_FAILURE);
     } else if (pid == 0) {
-        // Child process
         close(fd[1]);
         Calculation calc;
         read(fd[0], &calc, sizeof(Calculation));
@@ -65,7 +64,6 @@ void start_calculator() {
         printf("Result: %f\n", calc.result);
         exit(EXIT_SUCCESS);
     } else {
-        // Parent process
         close(fd[0]);
         Calculation calc;
 
@@ -75,6 +73,6 @@ void start_calculator() {
         write(fd[1], &calc, sizeof(Calculation));
         close(fd[1]);
 
-        wait(NULL); // Wait for child to finish
+        wait(NULL); 
     }
 }
