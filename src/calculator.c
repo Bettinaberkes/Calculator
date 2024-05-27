@@ -32,6 +32,9 @@ void* calculate(void* arg) {
                 calc->result = 0;
             }
             break;
+        case '?':
+            calc->result = calc->operand1;
+            break; 
         default:
             fprintf(stderr, "Error: Unknown operator '%c'.\n", calc->operator);
             calc->result = 0;
